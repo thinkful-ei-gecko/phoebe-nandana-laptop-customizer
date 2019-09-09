@@ -10,8 +10,18 @@ class CustomizeLaptop extends Component {
       <div>
         <h2>Customize your laptop</h2>
         <form className="feature">
-          
-          <LaptopPart features={this.props.features}/>
+          {Object.keys(this.props.features).map((feature, idx) => {
+            const featureHash = feature + '-' + idx;
+            return (
+              <LaptopPart 
+                features={this.props.features}
+                feature={feature}
+                featureHash={featureHash}
+                cartContents={this.props.cartContents}
+                updateFeature={this.props.updateFeature}
+              />
+            )
+          })}
         </form>
       </div>
     );

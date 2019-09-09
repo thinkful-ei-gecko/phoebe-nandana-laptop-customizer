@@ -28,14 +28,22 @@ class App extends Component {
     }
   };
 
+  updateFeature = (feature, newValue) => {
+    const selected = Object.assign({}, this.state.selected);
+    selected[feature] = newValue;
+    this.setState({
+      selected
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <header>
           <h1>ELF Computing | Laptops</h1>
         </header>
-        <CustomizeLaptop features={this.props.features}/>
-        <Cart cartContents={this.state.selected.Processor} />
+        <CustomizeLaptop features={this.props.features} cartContents={this.state.selected} updateFeature={this.updateFeature}/>
+        <Cart cartContents={this.state.selected} />
       </div>
     );
   }

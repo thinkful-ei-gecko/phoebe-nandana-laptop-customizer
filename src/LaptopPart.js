@@ -11,14 +11,23 @@ class LaptopPart extends Component {
   // }; 
   
   render() {
-    const keys = Object.keys(this.props.features);
+    
     return (
-      <div>
-        {keys.map(key => <h3>{key}</h3>)}
-        {this.props.features.map((option) => 
-          <Options features={this.props.features}/>
-        )}
-      </div>
+      <fieldset className="feature">
+        <legend className="feature__name">
+          <h3>{this.props.feature}</h3>
+        </legend>
+          <div>
+            {this.props.features[this.props.feature].map((option) => 
+              <Options 
+                  option={option}
+                  feature={this.props.feature}
+                  updateFeature={this.props.updateFeature}
+                  cartContents={this.props.cartContents}
+                />
+            )}
+          </div>
+      </fieldset>
     )
   }
 }
