@@ -10,7 +10,7 @@ class CustomizeLaptop extends Component {
       <div>
         <h2>Customize your laptop</h2>
         <form className="feature">
-            <LaptopPart features={this.props.features}/>
+          <LaptopPart features={this.props.features}/>
         </form>
       </div>
     );

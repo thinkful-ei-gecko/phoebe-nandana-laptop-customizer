@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
+import Options from './Options'
 
 class LaptopPart extends Component {
-
+  // features = () => {
+  //   return Object.keys(this.props.features.selected).map((feature, idx) => {
+  //     console.log(feature);
+  //     // featureHash = feature + '-' + idx;
+  //     return (<h3>{feature}</h3>)
+  //   });
+  // }; 
+  
   render() {
-    const features = Object.keys(this.props.features).map((feature, idx) => {
-      const featureHash = feature + '-' + idx;
-      const options = this.props.features[feature].map(item => {
-        const itemHash = slugify(JSON.stringify(item));
-        return (
-          <div key={itemHash} className="feature__item">
-            <input
-              type="radio"
-              id={itemHash}
-              className="feature__option"
-              name={slugify(feature)}
-              checked={item.name === this.state.selected[feature].name}
-              onChange={e => this.updateFeature(feature, item)}
-            />
-            <label htmlFor={itemHash} className="feature__label">
-              {item.name} ({USCurrencyFormat.format(item.cost)})
-            </label>
-          </div>
-        );
-      });
-
-      
-    }
-    
-}
+    const keys = Object.keys(this.props.features);
+    return (
+      <div>
+        {keys.map(key => <h3>{key}</h3>)}
+        {this.props.features.map((option) => 
+          <Options features={this.props.features}/>
+        )}
+      </div>
+    )
+  }
 }
 
+//   render() { 
+//     const features = Object.keys(this.props.features).map((feature, idx) => {  
+//       return (
+//         <div> 
+//         <h3>{feature}</h3> 
+//         </div> 
+//       ); 
+//     }); 
+//   }
+// }
 export default LaptopPart;
