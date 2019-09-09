@@ -5,15 +5,17 @@ class CustomizeLaptop extends Component {
 
   render () {
     console.log(this.props);
+  
     return (
       <div>
         <h2>Customize your laptop</h2>
-        <fieldset className="feature">
-            <LaptopPart features={this.props.features[0]}/>
-        </fieldset>
+        <form className="feature">
+            <LaptopPart features={this.props.features}/>
+        </form>
       </div>
     );
   }
+  
 }
 
 export default CustomizeLaptop;

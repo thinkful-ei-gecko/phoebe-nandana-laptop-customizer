@@ -34,7 +34,7 @@ class App extends Component {
         <header>
           <h1>ELF Computing | Laptops</h1>
         </header>
-        <CustomizeLaptop features={this.props.features.Processor}/>
+        <CustomizeLaptop features={this.props.features}/>
         <Cart cartContents={this.state.selected.Processor} />
       </div>
     );
