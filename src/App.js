@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header';
-import CustomizeLaptop from './CustomizeLaptop';
-import Cart from './Cart';
+import Header from './Header/Header';
+import CustomizeLaptop from './CustomizeLaptop/CustomizeLaptop';
+import Cart from './Cart/Cart';
 
 class App extends Component{
   state = {

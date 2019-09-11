@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
-import FeatureOption from './FeatureOption';
+import FeatureOption from '../FeatureOption/FeatureOption';
 
 
 class CustomizeLaptop extends Component{
