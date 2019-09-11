@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
 import './App.css';
+import Header from './Header';
 import CustomizeLaptop from './CustomizeLaptop';
 import Cart from './Cart';
 
-//CustomizeLaptop
-  //LaptopParts
-class App extends Component {
+class App extends Component{
   state = {
     selected: {
       Processor: {
@@ -36,16 +34,18 @@ class App extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className="App">
-        <header>
-          <h1>ELF Computing | Laptops</h1>
-        </header>
-        <CustomizeLaptop features={this.props.features} cartContents={this.state.selected} updateFeature={this.updateFeature}/>
-        <Cart cartContents={this.state.selected} />
-      </div>
-    );
+render(){
+   return(
+    <div className="App">
+    <Header />
+    <main>
+    <CustomizeLaptop features={this.props.features} 
+    selected={this.state.selected}
+    updateFeature={this.updateFeature} />
+    <Cart state={this.state.selected} />
+    </main>
+    </div>
+  );
   }
 }
 
